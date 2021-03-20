@@ -1,3 +1,22 @@
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  @media only screen and (max-width: 400px) and (max-height: 600px) {
+    height: auto;
+  }
+}
+
+.user-list-container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +33,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff0400;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

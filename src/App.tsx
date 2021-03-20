@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './App.scss';
+import UserList from "./user-list/UserList";
+import Pagination from "./pagination/Pagination";
 
 function App() {
+  const [page, setPage] = useState(1);
+
+  const changeNumber = (event: any) => {
+    console.log(event)
+    setPage(parseInt(event.target.innerText, 10));
+    console.log(page)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="main">
+        <div className="user-list-container">
+          <UserList pageNumber={page} />
+          <Pagination changeNumber={changeNumber} />
+        </div>
+      </div>
   );
 }
 
