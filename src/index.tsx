@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {createContext, useContext} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Store} from "./store/store";
+
+const store = new Store([]);
+// @ts-ignore
+const StoreContext = createContext<Store>([]);
+export const useStore = (): Store => useContext(StoreContext);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+      <StoreContext.Provider value={store}>
+          <App/>
+      </StoreContext.Provider>,
   document.getElementById('root')
 );
 

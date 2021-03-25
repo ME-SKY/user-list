@@ -1,0 +1,21 @@
+.user-form{
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .actions{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .first-name, .last-name, .email, .photo{
+    display: grid;
+    min-width: 250px;
+    min-height: 40px;
+  }
+}
